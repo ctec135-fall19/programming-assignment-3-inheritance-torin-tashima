@@ -104,6 +104,44 @@ namespace Prob4
             }
             Console.WriteLine();
             #endregion
+
+            #region switch statement
+            Console.WriteLine("Demonstrate use of switch statement");
+            foreach (Base Object in ObjectArray)
+            {
+                switch (Object)
+                {
+                    case Child c:
+                        Console.WriteLine("switch Child");
+                        break;
+                    case Base b:
+                        Console.WriteLine("switch Base");
+                        break;
+                    default:
+                        Console.WriteLine("switch default");
+                        break;
+                }
+            }
+            Console.WriteLine();
+            #endregion
+
+            #region create object of object type and initialize to base type
+            Console.WriteLine("Demonstrate casting of object types");
+
+            // first initialize "object" object to the "base" class type
+            Object newObject = new Base();
+            // then cast "object" object as a "base" object to call a method
+            Console.Write("{0}: ", newObject.GetType());
+            ((Base)newObject).PrintClass();
+            #endregion
+
+            #region create object of base type and initialize to child type
+            // first initialize "base" object to the "child" class type
+            Base bassGuitar = new Child();
+            // then cast "base" object as a "child" object to call a method
+            Console.Write("{0}: ", bassGuitar.GetType());
+            ((Child)bassGuitar).PrintClass();
+            #endregion
         }
     }
 }
