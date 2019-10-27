@@ -8,13 +8,23 @@ namespace Prob4
 {
     class Base
     {
-        public void PrintHello()
+        // Show that a method belonging to the base class is called from a
+        // child instance
+        public void BaseMethod()
         {
-            Console.WriteLine("hello");
+            Console.WriteLine("This is a base method.");
         }
-        public virtual void PrintAnimal()
+
+        // Demonstrate overriding a base class method by a child
+        public virtual void PrintClass()
         {
-            Console.WriteLine("dog");
+            Console.WriteLine("I'm a base object!");
+        }
+
+        // Demonstrate a child method calling the parent's method
+        public virtual void ParentsMethod()
+        {
+            Console.WriteLine("Base.ParentsMethod");
         }
     }
 }

@@ -28,8 +28,11 @@ namespace Prob3
     {
         static void Main(string[] args)
         {
-            Phone phil = new Phone("Phil", "Z-Mobile", 128);
-            phil.Calculate();
+            string foxName = "Reynard";
+
+            Fox reynard = new Fox(foxName);
+
+            reynard.printState();
         }
     }
 }

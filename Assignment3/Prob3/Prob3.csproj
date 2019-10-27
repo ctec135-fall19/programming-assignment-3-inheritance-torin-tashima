@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0ADC9F9A-C88B-48D1-BB01-7DAF305D8A8C}</ProjectGuid>
+    <ProjectGuid>{740EA0A6-11AB-4E22-8116-417A5C4139F5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Prob3</RootNamespace>
     <AssemblyName>Prob3</AssemblyName>
@@ -43,9 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
-    <Compile Include="Clock.cs" />
-    <Compile Include="Phone.cs" />
+    <Compile Include="Fox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

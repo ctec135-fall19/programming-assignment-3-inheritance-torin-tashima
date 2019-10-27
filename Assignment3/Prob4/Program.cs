@@ -43,14 +43,66 @@ namespace Prob4
         static void Main(string[] args)
         {
             #region array of every member of classes in hierarchy
-            Base BaseObject = new Base();
-            Child ChildObject = new Child();
-
-            Base[] Array = { BaseObject, ChildObject };
+            Base[] ObjectArray = { new Base(), new Child() };
             #endregion
 
             #region base class method called from child object
-            ChildObject.PrintHello();
+            Console.WriteLine("Demonstrate base method called from child object");
+            // demonstrate iteration through for loop
+            for (int i = 0; i < ObjectArray.Length; i++)
+            {
+                Console.Write("{0}: ", ObjectArray[i].GetType());
+                ObjectArray[i].BaseMethod();
+            }
+            Console.WriteLine();
+            #endregion
+
+            #region demonstrate method overriding
+            Console.WriteLine("Demonstrate base method overriden by child class");
+            // demonstrate iteration through foreach loop
+            foreach (Base Object in ObjectArray)
+            {
+                Console.Write("{0}: ", Object.GetType());
+                Object.PrintClass();
+            }
+            Console.WriteLine();
+            #endregion
+
+            #region demonstrate child method calling parent's method
+            Console.WriteLine("Demonstrate child method calling parent's method");
+            foreach (Base Object in ObjectArray)
+            {
+                Console.Write("{0}: ", Object.GetType());
+                Object.ParentsMethod();
+            }
+            Console.WriteLine();
+            #endregion
+
+            #region demonstrate use of "as" keyword
+            Console.WriteLine("Demonstrate use of \"as\" keyword");
+            foreach (Base Object in ObjectArray)
+            {
+                Base b = Object as Base;
+                Console.Write("{0}: ", b.GetType());
+                b.PrintClass();
+            }
+            Console.WriteLine();
+            #endregion
+
+            #region demonstrate use of "is" keyword
+            Console.WriteLine("Demonstrate use of \"is\" keyword");
+            foreach (Base Object in ObjectArray)
+            {
+                if (Object is Child)
+                {
+                    Console.WriteLine("Child");
+                }
+                else if (Object is Base)
+                {
+                    Console.WriteLine("Base");
+                }
+            }
+            Console.WriteLine();
             #endregion
         }
     }

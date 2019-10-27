@@ -8,9 +8,17 @@ namespace Prob4
 {
     class Child : Base
     {
-        public override void PrintAnimal()
+        // Demonstrate overriding a base class method by a child
+        public override void PrintClass()
         {
-            Console.WriteLine("fox");
+            Console.WriteLine("I'm a child object. Goo.");
+        }
+
+        // Demonstrate a child method calling the parent's method
+        public override void ParentsMethod()
+        {
+            base.ParentsMethod();
+            Console.WriteLine("Child.ParentsMethod");
         }
     }
 }
