@@ -1,11 +1,12 @@
 ﻿/*
 Author: Torin Tashima
+Team:   Torin Tashima and Katrina Voll-Taylor
 Date:   October 19, 2019
 CTEC 135: Microsoft Software Development with C#
 
 Module 4, Programming Assignment 3, Problem 4
 
-    Demo Class Hierarchy
+    Polymorphic Behavior Demos
 
 - Create a hierarchy of classes that demonstrates polymorphic behavior in the
     following situation
@@ -48,6 +49,7 @@ namespace Prob4
 
             #region base class method called from child object
             Console.WriteLine("Demonstrate base method called from child object");
+
             // demonstrate iteration through for loop
             for (int i = 0; i < ObjectArray.Length; i++)
             {
@@ -59,30 +61,31 @@ namespace Prob4
 
             #region demonstrate method overriding
             Console.WriteLine("Demonstrate base method overriden by child class");
+
             // demonstrate iteration through foreach loop
-            foreach (Base Object in ObjectArray)
+            foreach (Base Obj in ObjectArray)
             {
-                Console.Write("{0}: ", Object.GetType());
-                Object.PrintClass();
+                Console.Write("{0}: ", Obj.GetType());
+                Obj.PrintClass();
             }
             Console.WriteLine();
             #endregion
 
             #region demonstrate child method calling parent's method
             Console.WriteLine("Demonstrate child method calling parent's method");
-            foreach (Base Object in ObjectArray)
+            foreach (Base Obj in ObjectArray)
             {
-                Console.Write("{0}: ", Object.GetType());
-                Object.ParentsMethod();
+                Console.Write("{0}: ", Obj.GetType());
+                Obj.ParentsMethod();
             }
             Console.WriteLine();
             #endregion
 
             #region demonstrate use of "as" keyword
             Console.WriteLine("Demonstrate use of \"as\" keyword");
-            foreach (Base Object in ObjectArray)
+            foreach (Object Obj in ObjectArray)
             {
-                Base b = Object as Base;
+                Base b = Obj as Base;
                 Console.Write("{0}: ", b.GetType());
                 b.PrintClass();
             }
@@ -91,13 +94,13 @@ namespace Prob4
 
             #region demonstrate use of "is" keyword
             Console.WriteLine("Demonstrate use of \"is\" keyword");
-            foreach (Base Object in ObjectArray)
+            foreach (Base Obj in ObjectArray)
             {
-                if (Object is Child)
+                if (Obj is Child)
                 {
                     Console.WriteLine("Child");
                 }
-                else if (Object is Base)
+                else if (Obj is Base)
                 {
                     Console.WriteLine("Base");
                 }
@@ -107,9 +110,9 @@ namespace Prob4
 
             #region switch statement
             Console.WriteLine("Demonstrate use of switch statement");
-            foreach (Base Object in ObjectArray)
+            foreach (Base Obj in ObjectArray)
             {
-                switch (Object)
+                switch (Obj)
                 {
                     case Child c:
                         Console.WriteLine("switch Child");
@@ -130,6 +133,7 @@ namespace Prob4
 
             // first initialize "object" object to the "base" class type
             Object newObject = new Base();
+
             // then cast "object" object as a "base" object to call a method
             Console.Write("{0}: ", newObject.GetType());
             ((Base)newObject).PrintClass();
@@ -138,6 +142,7 @@ namespace Prob4
             #region create object of base type and initialize to child type
             // first initialize "base" object to the "child" class type
             Base bassGuitar = new Child();
+
             // then cast "base" object as a "child" object to call a method
             Console.Write("{0}: ", bassGuitar.GetType());
             ((Child)bassGuitar).PrintClass();

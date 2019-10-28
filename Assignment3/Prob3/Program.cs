@@ -1,5 +1,6 @@
 ﻿/*
 Author: Torin Tashima
+Team:   Torin Tashima and Katrina Voll-Taylor
 Date:   October 19, 2019
 CTEC 135: Microsoft Software Development with C#
 
@@ -28,10 +29,14 @@ namespace Prob3
     {
         static void Main(string[] args)
         {
+            // String object used to demonstrate aggregation
+            // Will still exist even when Fox object is destroyed
             string foxName = "Reynard";
 
+            // Create object of Fox class
             Fox reynard = new Fox(foxName);
 
+            // Print Reynard's state: name and body parts
             reynard.printState();
         }
     }

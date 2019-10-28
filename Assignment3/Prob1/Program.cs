@@ -1,5 +1,6 @@
 ﻿/*
 Author: Torin Tashima
+Team:   Torin Tashima and Katrina Voll-Taylor
 Date:   October 19, 2019
 CTEC 135: Microsoft Software Development with C#
 

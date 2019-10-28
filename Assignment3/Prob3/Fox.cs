@@ -14,6 +14,11 @@ namespace Prob3
 
         public Fox(string name)
         {
+            // Fox Class IPO
+            // Input:   A string argument named name.
+            // Process: Pass in value of name argument to the Fox's name field.
+            // Output:  N/A
+
             // demonstrate aggregation
             this.name = name;
 
@@ -23,6 +28,12 @@ namespace Prob3
 
         public void printState()
         {
+            // printState method IPO
+            // Input:   N/A
+            // Process: Get fox object's name and list of body parts.
+            //          A foreach loop is used to iterate through body parts.
+            // Output:  Print fox's name and list of body parts.
+
             // aggregation - printing
             Console.WriteLine("Fox's name: {0} ", name);
 
